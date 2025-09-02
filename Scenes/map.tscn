@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://b2m6gc67vhgua"]
+
+[ext_resource type="Texture2D" uid="uid://dyfj4hkbwjcrm" path="res://Assets/Backgrounds/ChatGPT Image Sep 2, 2025, 08_40_34 AM.png" id="1_26yhd"]
+[ext_resource type="PackedScene" uid="uid://ddiw5l7fn0lo6" path="res://Scenes/player.tscn" id="2_p3ir5"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_myvm1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_26yhd")
+}],
+"loop": true,
+"name": &"map",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q0mm3"]
+size = Vector2(518.883, 119.485)
+
+[node name="map" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(577, 287)
+scale = Vector2(0.757324, 0.730957)
+sprite_frames = SubResource("SpriteFrames_myvm1")
+animation = &"map"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(489.011, 171.602)
+rotation = -0.612912
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_q0mm3")
+
+[node name="player" parent="." instance=ExtResource("2_p3ir5")]
+position = Vector2(234, 132)
+rotation = 0.0209294
+scale = Vector2(1, 1)
